@@ -1,0 +1,53 @@
+$gradient-end-color: #afd7e6;
+$gradient-start-color: lighten($gradient-end-color, 15%);
+$progress-overflow-color: #ff0000;
+
+@mixin progress-gradient($startColor, $endColor) {
+    filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=$startColor, endcolorstr=$endColor, gradientType=0);
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=$startColor, endcolorstr=$endColor, gradientType=0);
+    background: $endColor;
+    background: -moz-linear-gradient(top, $startColor, $endColor);
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from($startColor), to($endColor));
+    background: -o-linear-gradient(top, $startColor, $endColor);
+}
+
+/* css reset */
+ul, li {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+
+.container {
+    margin: 0 auto;
+    width: 90%;
+}
+.progress {
+    position: relative;
+    border: 1px solid #ccc;
+    height: 48px;
+    margin-bottom: 16px;
+
+    .progress-bar {
+        height: 100%;
+        @include progress-gradient($gradient-start-color, $gradient-end-color);
+    }
+
+    .progress-bar.overflow {
+        background: $progress-overflow-color;
+    }
+
+    .progress-percentage {
+        position: absolute;
+        left: 49%;
+        top: 16px;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .container {
+        width: 400px;
+    }
+}

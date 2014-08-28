@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Progress bar</title>
+
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container">
+        <h1>Progress Bars Demo</h1>
+        <ul>
+            <li id="progress1" class="progress">
+                <div class="progress-percentage"></div>
+                <div class="progress-bar" aria-valuenow="25"></div>
+            </li>
+            <li id="progress2" class="progress">
+                <div class="progress-percentage"></div>
+                <div class="progress-bar" aria-valuenow="50"></div>
+            </li>
+            <li id="progress3" class="progress">
+                <div class="progress-percentage"></div>
+                <div class="progress-bar" aria-valuenow="75"></div>
+            </li>
+        </ul>
+        <div class="controls">
+            <select name="current-progress" id="current-progress">
+                <option value="progress1">#progress1</option>
+                <option value="progress2">#progress2</option>
+                <option value="progress3">#progress3</option>
+            </select>
+            <button id="minus25" class="progress-control">-25</button>
+            <button id="minus10" class="progress-control">-10</button>
+            <button id="plus10" class="progress-control">+10</button>
+            <button id="plus25" class="progress-control">+25</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
